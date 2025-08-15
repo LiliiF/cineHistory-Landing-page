@@ -1,5 +1,9 @@
 @use '../../../styles/index' as *;
 
+#hero video {
+  filter: brightness(1.05) contrast(1.1) saturate(1.2);
+}
+
 #hero {
   position: relative;
   width: 100%;

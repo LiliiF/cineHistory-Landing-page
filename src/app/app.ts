@@ -8,7 +8,7 @@ import { Footer } from './components/footer/footer';
 @Component({
   selector: 'app-root',
   imports: [
-    // About,
+    About,
     Header,
     Hero,
     // Footer,

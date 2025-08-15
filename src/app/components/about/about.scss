@@ -1,0 +1,115 @@
+@use '../../../styles/index' as *;
+
+#about {
+    position: relative;
+    // height: 430px;
+    background-color: $cor-secundaria;
+    color: $cor-clara;
+    height: 430px;
+
+    .about-primaryImage {
+        position: absolute;
+        top: -60px;
+        left: 5%;
+
+        img {
+            border-radius: 16px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+
+    .about-text {
+
+        .about-top ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            padding-left: 35rem;
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+
+            li {
+                padding-right: 1rem;
+                border-right: 1px solid $cor-clara;
+            }
+        }
+
+        .text-center {
+            padding-bottom: 1rem;
+            padding-left: 35rem;
+            width: 65%;
+
+            span {
+                color: $cor-destaque-principal;
+            }
+        }
+
+        .text-streaming {
+            padding-left: 35rem;
+            display: flex;
+            flex-direction: column;
+
+            span {
+                display: inline-block;
+                border: 2px solid $cor-destaque-principal;
+                border-radius: 5px;
+                padding: 4px 8px;
+            }
+
+        }
+    }
+
+    .about-secondImage {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    @media (max-width: 1024px) {
+        #about {
+            height: 288px !important;
+        }
+
+        .about-secondImage {
+            position: absolute;
+            top: 65.7% !important;
+
+            img {
+                width: 239px;
+                height: 148px;
+            }
+        }
+
+        .about-top ul,
+        .text-center,
+        .text-streaming {
+            padding-left: 0 !important;
+            width: 100% !important;
+            font-size: 12px;
+        }
+
+        .about-top ul {
+            gap: 1rem !important;
+        }
+
+        .about-top ul li {
+            padding-right: 8px !important;
+        }
+
+        .about-text {
+            padding: 0 1rem;
+        }
+
+        .text-streaming {
+            img {
+                width: 50px !important;
+                height: 50px !important;
+            }
+        }
+
+        .about-primaryImage {
+            display: none;
+        }
+    }
+
+}
