@@ -1,0 +1,12 @@
+@use './variables' as *;
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: $fonte-corpo;
+  margin: 0;
+  padding: 0;
+}

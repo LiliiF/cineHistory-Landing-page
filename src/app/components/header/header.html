@@ -1,0 +1,25 @@
+<section id="header">
+  <div class="header-content">
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav [class.active]="menuOpen" class="header-nav">
+        <div class="nav-logo">
+          <a href="">cineHistory</a>
+        </div>
+
+        <ul>
+          <li>Inicio</li>
+          <li>Sobre o filme</li>
+          <li>Curiosidades</li>
+        </ul>
+
+        <div class="empresa">
+          <span>Studio Ghibli</span>
+        </div>
+    </nav>
+  </div>
+</section>

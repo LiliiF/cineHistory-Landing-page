@@ -1,0 +1,108 @@
+@use '../../../styles/index' as *;
+
+#header {
+  position: fixed;
+  font-family: $fonte-corpo;
+  width: 100%;
+  color: $cor-clara;
+  z-index: 1000;
+}
+
+.header-nav .nav-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.header-nav {
+  @include flex-between-center;
+}
+
+.nav-logo a {
+  color: $cor-destaque-secundaria;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.header-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav ul li {
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.header-nav ul li:hover,
+span:hover {
+  color: $cor-destaque-principal;
+  border-bottom: 1px solid $cor-destaque-principal ;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+
+  span {
+    width: 15px;
+    height: 2px;
+    background-color: $cor-clara;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-logo, .empresa {
+    display: none;
+    padding-top: 10px;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .header-nav ul,
+  .header-nav .nav-content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 2rem;
+  }
+
+  .header-nav.active ul,
+  .header-nav.active .nav-logo,
+  .header-nav.active .empresa {
+    display: flex;
+
+    // z-index: 200;
+    // position: absolute;
+  }
+
+  .header-nav .nav-content {
+    justify-content: space-between !important;
+    flex-direction: row !important;
+    padding-bottom: 0 !important;
+  }
+}
