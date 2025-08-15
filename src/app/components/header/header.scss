@@ -1,7 +1,7 @@
 @use '../../../styles/index' as *;
 
 #header {
-  position: fixed;
+  position: absolute;
   font-family: $fonte-corpo;
   width: 100%;
   color: $cor-clara;
