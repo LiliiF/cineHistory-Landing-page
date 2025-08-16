@@ -3,7 +3,7 @@
 #about {
     position: relative;
     // height: 430px;
-    background-color: $cor-secundaria;
+    background-color: $cor-about;
     color: $cor-clara;
     height: 430px;
 
@@ -13,9 +13,23 @@
         left: 5%;
 
         img {
-            @include box-shadow;
-            border-radius: 16px;
-        }
+                @include box-shadow;
+                border-radius: 16px;
+                animation: float 6s ease-in-out infinite;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-15px);
+                }
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+
     }
 
     .about-text {

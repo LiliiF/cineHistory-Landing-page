@@ -1,47 +1,52 @@
 @use '../../../styles/index' as *;
 
-#movie{
-    @include flex-center; 
+#movie {
+    @include flex-center;
     text-align: center;
     color: $cor-clara;
     padding-bottom: 5rem;
 
-    .movie-content{
+    .movie-content {
 
-        h1{
+        h1 {
+            @include title;
             text-shadow: 2px 2px 4px #000000;
             font-size: 3.2rem;
-            font-family: $fonte-titulo;
             padding: 2rem;
-            font-weight: 400;
         }
 
-        .movie-ghibli{
-            @include flex-center; 
+        .movie-ghibli {
+            @include flex-center;
             display: flex;
-            gap: 2rem; 
-            
-            img{
+            gap: 2rem;
+
+            img {
                 @include box-shadow;
                 border-radius: 16px;
+                transition: background-color 0.5s ease, transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 0 15px $cor-borda, 0 0 30px $cor-borda, 0 0 45px $cor-borda;
+                }
             }
         }
     }
 
-   @media (max-width: 768px) {
-        
-        h1{
-            text-shadow: 2px 2px 4px  #000000b0 !important;
+    @media (max-width: 768px) {
+
+        h1 {
+            text-shadow: 2px 2px 4px #000000b0 !important;
         }
-        
-        .movie-ghibli{
+
+        .movie-ghibli {
             display: flex;
             flex-wrap: wrap;
 
-             img{
+            img {
                 width: 150px;
                 height: 200px;
-             }
+            }
         }
     }
 }

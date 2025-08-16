@@ -1,0 +1,153 @@
+@use '../../../styles/index' as *;
+
+#footer {
+    position: relative;
+    color: $cor-clara;
+
+    .footer-content {
+        .footer-inner {
+            padding-left: 23%;
+            position: relative;
+
+            .footer-title {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                h1 {
+                    @include title;
+                    font-size: 32px;
+                }
+
+                h2 {
+                    font-size: 15px;
+                    font-weight: 400;
+                }
+            }
+
+            .footer-form {
+                padding-top: 5rem;
+
+                form {
+                    @include box-shadow;
+                    padding: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    background: linear-gradient(rgba(55, 108, 113, 0.86),
+                            rgba(55, 108, 113, 0.86)),
+                        url('../../../assets/img/chihiro_form.png');
+                    background-size: cover;
+                    background-position: center;
+                    border-color: $cor-borda;
+                    border-radius: 16px;
+                    width: 451.93px;
+                    height: 497px;
+                    gap: 0.8rem;
+                    position: absolute;
+                    z-index: 2;
+
+                    h1 {
+                        padding-bottom: 5rem;
+                        font-weight: 400;
+                    }
+
+                    input {
+                        padding: 0.8rem;
+                        width: 100%;
+                        border-radius: 4px;
+                    }
+
+                    input::placeholder,
+                    textarea::placeholder {
+                        color: $cor-clara;
+                        opacity: 0.8;
+                    }
+
+                    textarea,
+                    input {
+                        border-color: $cor-borda;
+                        background-color: $cor-secundaria;
+                        color: $cor-clara;
+                    }
+
+                    textarea {
+                        color: $cor-clara;
+                        height: 106px;
+                    }
+
+                    button {
+                        @include box-shadow;
+                        background-color: $cor-terciaria;
+                        border: $cor-destaque-secundaria;
+                        font-family: $fonte-corpo;
+                        color: $cor-clara;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                        margin-top: 1rem;
+                        padding: 1rem;
+                        border-radius: 22px;
+                        transition: background-color 0.5s ease, transform 0.3s ease;
+
+                        &:hover {
+                            background-color: $cor-destaque-secundaria;
+                            transform: scale(1.05); // cresce um pouquinho
+                        }
+                    }
+                }
+
+            }
+
+            .footer-image {
+                position: relative;
+
+
+                img {
+                    position: absolute;
+                    z-index: 2;
+                    right: -248px;
+                    top: 142px;
+
+                }
+            }
+        }
+
+        .footer-background {
+            height: 60vh;
+            background-image: url('../../../assets/img/footer-image.png');
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 350px;
+            width: 100%;
+            box-shadow: inset 0px -20px 30px -10px rgba(1, 53, 47, 0.5);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer-background {
+            height: 80vh !important;
+        }
+
+        // #footer{
+        //     @include flex-center;
+        // }
+
+        .footer-inner {
+            padding: 1rem !important;
+        }
+
+        form {
+            width: 339px !important;
+            height: 449px !important;
+        }
+
+        button {
+            padding: 8px !important;
+        }
+
+        .footer-image {
+            display: none;
+        }
+    }
+}

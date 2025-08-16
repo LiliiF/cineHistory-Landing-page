@@ -13,7 +13,7 @@ import { Footer } from './components/footer/footer';
     Hero,
     About,
     Movies,
-    // Footer,
+    Footer,
     RouterOutlet
   ],
   templateUrl: './app.html',
