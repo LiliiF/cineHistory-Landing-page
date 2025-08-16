@@ -5,7 +5,8 @@ CineHistory é uma **landing page desenvolvida em Angular** que apresenta resumo
 ## Funcionalidades
 
 - Seção **Hero** com destaque para o projeto.
-- Seção **Sobre** explicando o conceito da plataforma.
+- Seção **Sobre** explicando o filme.
+- Seção **Filmes** exibindo alguns filmes do Studio Ghibli.
 - **Formulário** para envio de ideias ou comentários dos usuários.
 - **Header** e **Footer** reutilizáveis.
 - Design responsivo e compatível com dispositivos móveis.
