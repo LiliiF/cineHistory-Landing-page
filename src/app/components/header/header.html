@@ -7,19 +7,22 @@
     </div>
 
     <nav [class.active]="menuOpen" class="header-nav">
-        <div class="nav-logo">
-          <a href="">cineHistory</a>
-        </div>
+      <div class="nav-logo">
+        <a href="">cineHistory</a>
+      </div>
 
-        <ul>
-          <li>Inicio</li>
-          <li>Sobre o filme</li>
-          <li>Curiosidades</li>
-        </ul>
+      <ul>
+        <li (click)="scrollToSection('hero')" [class.active]="activeSection === 'hero'">Início</li>
+        <li (click)="scrollToSection('about')" [class.active]="activeSection === 'about'">Sobre o filme</li>
+        <li (click)="scrollToSection('movie')" [class.active]="activeSection === 'movie'">Studio Ghibli</li>
+      </ul>
 
-        <div class="empresa">
-          <span>Studio Ghibli</span>
-        </div>
+      <div class="empresa">
+        <span (click)="scrollToSection('footer')" [class.active]="activeSection === 'footer'">Enviar sugestão</span>
+      </div>
     </nav>
   </div>
+  <!-- <div class="button-inicio">
+    <button (click)="scrollToSection('hero')">^</button>
+  </div> -->
 </section>

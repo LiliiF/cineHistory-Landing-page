@@ -2,107 +2,138 @@
 
 #header {
   position: absolute;
-  font-family: $fonte-corpo;
   width: 100%;
-  color: $cor-clara;
   z-index: 1000;
-}
+  font-family: $fonte-corpo;
+  color: $cor-clara;
 
-.header-nav .nav-content {
-  display: flex;
-  justify-content: space-between;
-}
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+
+    // NAV
+    .header-nav {
+      @include flex-between-center;
+
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .nav-logo a {
+        color: $cor-destaque-secundaria;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          cursor: pointer;
+          transition: color 0.5s;
+
+          &.active {
+            color: $cor-destaque-principal;
+            border-bottom: 2px solid $cor-destaque-principal;
+          }
+
+          &:hover {
+            color: $cor-destaque-principal;
+            border-bottom: 1px solid $cor-destaque-principal;
+          }
+        }
+      }
 
 
-.header-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-}
+      .empresa span {
+        cursor: pointer;
+        transition: color 0.3s, border-bottom 0.3s;
 
-.header-nav {
-  @include flex-between-center;
-}
+        &:hover {
+          color: $cor-destaque-principal;
+          border-bottom: 1px solid $cor-destaque-principal;
+        }
+      }
 
-.nav-logo a {
-  color: $cor-destaque-secundaria;
-  font-weight: 500;
-  text-decoration: none;
-}
+    }
 
-.header-nav ul {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
 
-.header-nav ul li {
-  cursor: pointer;
-  transition: color 0.5s;
-}
+      span {
+        width: 15px;
+        height: 2px;
+        background-color: $cor-clara;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+    }
+  }
 
-.header-nav ul li:hover,
-span:hover {
-  color: $cor-destaque-principal;
-  border-bottom: 1px solid $cor-destaque-principal ;
-}
+  .button-inicio {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-
-  span {
-    width: 15px;
-    height: 2px;
-    background-color: $cor-clara;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+    button {
+      padding: 16px 20px !important;
+      background-color: $cor-destaque-secundaria;
+      border-radius: 50%;
+    }
   }
 }
 
+
 @media (max-width: 768px) {
-  .nav-logo, .empresa {
+
+  .nav-logo,
+  .empresa {
     display: none;
     padding-top: 10px;
   }
 
   .hamburger {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
   }
 
-  .header-nav ul,
-  .header-nav .nav-content {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: $cor-terciaria;
-    padding: 2rem;
-  }
+  .header-nav {
+    &.active {
 
-  .header-nav.active ul,
-  .header-nav.active .nav-logo,
-  .header-nav.active .empresa {
-    display: flex;
+      ul,
+      .nav-logo,
+      .empresa {
+        display: flex;
+      }
+    }
 
-    // z-index: 200;
-    // position: absolute;
-  }
+    ul,
+    .nav-content {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: $cor-terciaria;
+      padding: 2rem;
+    }
 
-  .header-nav .nav-content {
-    justify-content: space-between !important;
-    flex-direction: row !important;
-    padding-bottom: 0 !important;
+    .nav-content {
+      justify-content: space-between !important;
+      flex-direction: row !important;
+      padding-bottom: 0 !important;
+    }
   }
 }
